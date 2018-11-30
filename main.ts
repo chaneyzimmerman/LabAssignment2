@@ -1,21 +1,23 @@
 
 
-class MyFirstProgram {
-    constructor(...argArray: Array<any>) {
-        this.printArgs(argArray);
-    }
-    printArgs(argArray) {
-        console.log(argArray);
-    }
-    runFirst(callback:Function) {
-        console.log('this method runs first...');
-    }
-    runLast() {
-        console.log('this method runs last');
-    }
-    runMiddle() {
-        console.log('this code run in between the other two function...!')
-    }
-}
+class Greeter {
 
-const newInstance = new MyFirstProgram("a", "b", "c");
+    constructor(private first_name: string, private last_name: string) {
+    }
+
+
+    showGreeting() {
+        const banner = document.getElementById('banner');
+        banner.innerHTML = 'Hello ' + this.first_name + ' ' + this.last_name + '.';
+    }
+
+    hideGreeting() {
+        const banner = document.getElementById('banner');
+        banner.innerHTML = 'r1c2';
+
+    }
+
+
+}  
+
+const greeter = new Greeter('Chaney', 'Zimmerman');
